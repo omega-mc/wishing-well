@@ -1,13 +1,12 @@
-package draylar.wishingwell;
+package draylar.wishingwell.content;
 
+import draylar.wishingwell.WishingWell;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.block.*;
-import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.context.LootContextParameters;
@@ -43,13 +42,13 @@ public class WishingAirBlock extends Block {
                 ItemEntity itemEntity = (ItemEntity) entity;
 
                 // Ensure stack passing through is golden nugget
-                if(itemEntity.getStack().getItem().equals(Items.GOLD_NUGGET)) {
-                    itemEntity.getStack().decrement(1);
+                 if(WishingWell.WISHING_WELL_PAYMENT.contains(itemEntity.getStack().getItem())) {
+                    itemEntity.getStack().decrement(WishingWell.CONFIG.paymentPerActivation);
 
-                    // Set chest
-//                    world.setBlockState(pos, Blocks.CHEST.getDefaultState());
-//                    ((ChestBlockEntity) world.getBlockEntity(pos)).setLootTable(new Identifier("chests/shipwreck_treasure"), world.random.nextInt(1000));
-                    world.setBlockState(pos, Blocks.AIR.getDefaultState());
+                    // Remove wishing well source if config option is enabled
+                    if(WishingWell.CONFIG.disableAfterUse) {
+                        world.setBlockState(pos, Blocks.AIR.getDefaultState());
+                    }
 
                     // generate loot
                     LootTable table = serverWorld.getServer().getLootManager().getTable(new Identifier("wishingwell", "wishing_well"));
