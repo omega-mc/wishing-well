@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "draylar.wishingwell.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "DesertWellFeatureMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

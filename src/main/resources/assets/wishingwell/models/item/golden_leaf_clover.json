@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "wishingwell:item/gold_leaf_clover"
+  }
+}

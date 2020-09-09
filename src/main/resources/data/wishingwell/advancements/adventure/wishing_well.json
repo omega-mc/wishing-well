@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display": {
+    "icon": {
+      "item": "minecraft:gold_nugget"
+    },
+    "title": {
+      "translate": "wishingwell.advancement.title"
+    },
+    "description": {
+      "translate": "wishingwell.advancement.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "used_wishing_well": {
+      "trigger": "impossible"
+    }
+  },
+  "requirements": [
+    [
+      "used_wishing_well"
+    ]
+  ]
+}

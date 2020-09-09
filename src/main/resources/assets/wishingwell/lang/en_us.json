@@ -1,0 +1,9 @@
+{
+  "item.wishingwell.golden_leaf_clover": "Golden Leaf Clover",
+
+  "wishingwell.advancement.title": "Into the Wishing Well",
+  "wishingwell.advancement.description": "Throw a Gold Nugget into a Wishing Well.",
+
+  "wishingwell.golden_leaf_clover.description": "It feels lucky!",
+  "wishingwell.golden_leaf_clover.effect": "Luck effect when held in inventory"
+}
