@@ -9,9 +9,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
@@ -32,7 +30,7 @@ public class CloverItem extends Item {
 
     @Override
     public Text getName(ItemStack stack) {
-        return new TranslatableText(this.getTranslationKey(stack)).formatted(Formatting.GOLD);
+        return Text.translatable(this.getTranslationKey(stack)).formatted(Formatting.GOLD);
     }
 
     @Environment(EnvType.CLIENT)
@@ -41,10 +39,10 @@ public class CloverItem extends Item {
         super.appendTooltip(stack, world, tooltip, context);
 
         // description
-        tooltip.add(new TranslatableText("wishingwell.golden_leaf_clover.description").formatted(Formatting.GRAY));
-        tooltip.add(new LiteralText(""));
+        tooltip.add(Text.translatable("wishingwell.golden_leaf_clover.description").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal(""));
 
         // luck
-        tooltip.add(new TranslatableText("wishingwell.golden_leaf_clover.effect").formatted(Formatting.BLUE));
+        tooltip.add(Text.translatable("wishingwell.golden_leaf_clover.effect").formatted(Formatting.BLUE));
     }
 }

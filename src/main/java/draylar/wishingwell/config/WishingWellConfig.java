@@ -1,15 +1,18 @@
 package draylar.wishingwell.config;
 
-import me.sargunvohra.mcmods.autoconfig1u.ConfigData;
-import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
-import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
+import draylar.omegaconfig.api.Comment;
+import draylar.omegaconfig.api.Config;
 
-@Config(name = "wishingwell")
-public class WishingWellConfig implements ConfigData {
+public class WishingWellConfig implements Config {
 
     @Comment(value = "Whether Wishing Wells are permanently disabled after being used once.")
     public boolean disableAfterUse = true;
 
     @Comment(value = "The count decremented from a valid stack of items thrown into an unactivated Wishing Well.")
     public int paymentPerActivation = 1;
+
+    @Override
+    public String getName() {
+        return "wishingwell";
+    }
 }

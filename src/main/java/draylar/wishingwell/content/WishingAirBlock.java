@@ -42,7 +42,7 @@ public class WishingAirBlock extends Block {
                 ItemEntity itemEntity = (ItemEntity) entity;
 
                 // Ensure stack passing through is golden nugget
-                 if(WishingWell.WISHING_WELL_PAYMENT.contains(itemEntity.getStack().getItem())) {
+                if(itemEntity.getStack().isIn(WishingWell.WISHING_WELL_PAYMENT)) {
                     itemEntity.getStack().decrement(WishingWell.CONFIG.paymentPerActivation);
 
                     // Remove wishing well source if config option is enabled
